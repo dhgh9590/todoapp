@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import './reset.css';
 import './App.css';
+import Main from './pages/Main';
+/* prop 타입체크 */
+// import PropTypes from 'prop-types';
+
+/* 폰트어썸 */
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faBars } from '@fortawesome/free-solid-svg-icons';
+
+/* 이미지 절대경로 */
+// src={`${process.env.PUBLIC_URL}/나머지 폴더 주소`}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Main></Main>}></Route>
+      </Routes>
     </div>
   );
 }
+
+/*
+Index.propTypes = {
+  prop이름: PropTypes.array,
+};
+*/
 
 export default App;
