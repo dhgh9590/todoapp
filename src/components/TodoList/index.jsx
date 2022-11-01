@@ -53,7 +53,7 @@ const Index = ({ filter }) => {
   const filtered = getFilteredItems(todos, filter);
 
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} container`}>
       <ul className={styles.list}>
         {filtered &&
           filtered.map(item => {

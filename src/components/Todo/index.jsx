@@ -18,7 +18,7 @@ const Index = ({ todo, onUpdate, onDelete }) => {
     onDelete(todo);
   };
   return (
-    <li className={styles.todo}>
+    <li className={`${styles.todo} todo`}>
       <input
         className={styles.checkbox}
         type="checkbox"
