@@ -3,6 +3,7 @@ import { useState } from 'react';
 import AddTodo from '../AddTodo';
 import Todo from '../Todo';
 import PropTypes from 'prop-types';
+import styles from './style.module.css';
 
 const Index = ({ filter }) => {
   //todo 리스트
@@ -52,8 +53,8 @@ const Index = ({ filter }) => {
   const filtered = getFilteredItems(todos, filter);
 
   return (
-    <section>
-      <ul>
+    <section className={styles.container}>
+      <ul className={styles.list}>
         {filtered &&
           filtered.map(item => {
             return <Todo key={item.id} todo={item} onUpdate={handleUpdate} onDelete={handleDelete}></Todo>;

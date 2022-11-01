@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import styles from './style.module.css';
 
 const Index = ({ todo, onUpdate, onDelete }) => {
   const { text, status } = todo;
@@ -17,12 +18,22 @@ const Index = ({ todo, onUpdate, onDelete }) => {
     onDelete(todo);
   };
   return (
-    <li>
-      <input type="checkbox" id={todo.id} checked={status === 'completed'} onChange={handleChange} />
-      <label htmlFor={todo.id}>{text}</label>
-      <button onClick={handleDelete}>
-        <FontAwesomeIcon icon={faTrashAlt} />
-      </button>
+    <li className={styles.todo}>
+      <input
+        className={styles.checkbox}
+        type="checkbox"
+        id={todo.id}
+        checked={status === 'completed'}
+        onChange={handleChange}
+      />
+      <label className={styles.text} htmlFor={todo.id}>
+        {text}
+      </label>
+      <span className={styles.icon}>
+        <button className={styles.button} onClick={handleDelete}>
+          <FontAwesomeIcon icon={faTrashAlt} />
+        </button>
+      </span>
     </li>
   );
 };

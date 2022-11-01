@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './style.module.css';
 
-const Index = ({ filters, /*filter */ onFilterChange }) => {
+const Index = ({ filters, filter, onFilterChange }) => {
   return (
-    <header>
-      <ul>
+    <header className={styles.header}>
+      <ul className={styles.filters}>
         {filters &&
           filters.map((item, index) => {
             return (
               <li key={index}>
                 <button
+                  className={`${styles.filter} ${filter === item && styles.selected}`}
                   onClick={() => {
                     onFilterChange(item);
                   }}
