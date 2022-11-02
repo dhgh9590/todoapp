@@ -5,7 +5,7 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from './style.module.css';
 
 const Index = ({ todo, onUpdate, onDelete }) => {
-  const { text, status } = todo;
+  const { id, text, status } = todo;
 
   //체크 박스 업데이트
   const handleChange = e => {
@@ -18,15 +18,15 @@ const Index = ({ todo, onUpdate, onDelete }) => {
     onDelete(todo);
   };
   return (
-    <li className={`${styles.todo} todo`}>
+    <li className={`${styles.todo} ${todo.status === 'completed' && styles.completed} todo`}>
       <input
         className={styles.checkbox}
         type="checkbox"
-        id={todo.id}
+        id={id}
         checked={status === 'completed'}
         onChange={handleChange}
       />
-      <label className={styles.text} htmlFor={todo.id}>
+      <label className={styles.text} htmlFor={id}>
         {text}
       </label>
       <span className={styles.icon}>
