@@ -7,10 +7,6 @@ import { useEffect } from 'react';
 /* prop 타입체크 */
 // import PropTypes from 'prop-types';
 
-/* 폰트어썸 */
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faBars } from '@fortawesome/free-solid-svg-icons';
-
 /* 이미지 절대경로 */
 // src={`${process.env.PUBLIC_URL}/나머지 폴더 주소`}
 
